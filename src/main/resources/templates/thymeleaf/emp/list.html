@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>hello thymeleaf</title>
+<!--/*/ 
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.css"> 
+<link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.css"> 
+/*/-->
+<!-- Thymeleaf 주석 : /*/ /*/ html 주석을 사라지게 한다. (data-th-remove="all") -->
+<link rel="stylesheet" href="../css/bootstrap.css" data-th-remove="all">
+<link rel="stylesheet" href="../css/animate.css" data-th-remove="all">
+
+</head>
+<body>
+<h1>Emp List!!</h1>
+	<table class="table table-hover table-striped table-bordered animated jello">
+	<thead>
+		<tr>
+			<th>empno</th>
+			<th>ename</th>
+			<th>gender</th>
+			<th>job</th>
+			<th>hiredate</th>
+			<th>sal</th>
+			<th>comm</th>
+		</tr>
+	</thead>
+	<tfoot>
+	</tfoot>
+	<tbody>
+	<tr data-th-each="e : ${emps}">
+	<td data-th-text="${e.empno}"></td>
+	<td data-th-text="${e.ename}"></td>
+	<td data-th-text="${e.gender}"></td>
+	<td data-th-text="${e.job}"></td>
+	<td data-th-text="${e.hiredate}"></td>
+	<td data-th-text="${e.sal}"></td>
+	<td data-th-text="${e.comm}"></td>
+	</tr>
+	</tbody>
+	</table>
+	<ul data-th-with="xxx=${e}" class="list-group animated jello">
+		<li data-th-text="${xxx}"></li>
+	</ul>
+</body>
+</html>
